@@ -1,0 +1,27 @@
+{
+  "name": "cypher",
+  "version": "1.0.0",
+  "description": "management website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix client",    
+    "deploy" :"npm run build --prefix client && npm run start",
+    "server":"npm run dev --prefix server",
+    "watch":"npm run server & npm run client",
+    "install-client":"npm install --prefix client",
+    "install-server":"npm install --prefix server",
+    "install":"npm run insall-server && npm run install-client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-s-t-e-y-a/cypher.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-s-t-e-y-a/cypher/issues"
+  },
+  "homepage": "https://github.com/a-s-t-e-y-a/cypher#readme"
+}
