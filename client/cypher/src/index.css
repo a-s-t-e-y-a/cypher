@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face{
+  font-family:"Playfair_Display";
+  src:url(../public/images/Playfair_Display.zip)
+
+
+}
