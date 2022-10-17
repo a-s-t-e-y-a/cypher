@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+@font-face{
+  font-family:"Playfair_Display";
+  src:url(../public/images/Playfair_Display.zip)
+  
+}
