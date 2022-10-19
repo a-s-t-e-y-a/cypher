@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm start --prefix client",    
-    "deploy" :"npm run build --prefix client && npm run start",
-    "server":"npm run dev --prefix server",
-    "watch":"npm run server & npm run client",
-    "install-client":"npm install --prefix client",
-    "install-server":"npm install --prefix server",
-    "install":"npm run insall-server && npm run install-client"
+    "client": "npm start --prefix client",
+    "deploy": "npm run build --prefix client && npm run start",
+    "server": "npm run dev --prefix server",
+    "watch": "npm run server & npm run client",
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "install": "npm run insall-server && npm run install-client"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/a-s-t-e-y-a/cypher/issues"
   },
-  "homepage": "https://github.com/a-s-t-e-y-a/cypher#readme"
+  "homepage": "https://github.com/a-s-t-e-y-a/cypher#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5"
+  }
 }

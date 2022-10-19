@@ -1,4 +1,5 @@
 import { Data, Data2, Data3, Data4, Data5} from "../constant/header_text";
+import Products from '../constant/productitem';
 
 export default function Headerit(){
 
@@ -25,6 +26,8 @@ return(
               <div className="font-serif ... underline underline-offset-8  ..."> {Data5}</div>
         </div>
     </div>
+
+    
     </>
 )
 }
