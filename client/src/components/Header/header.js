@@ -1,4 +1,4 @@
-import { Data, Data2, Data3, Data4, Data5} from "../constant/header_text";
+import { Data, Data2, Data3, Data4, Data5} from "./constant/header_text";
 
 
 export default function Headerit(){

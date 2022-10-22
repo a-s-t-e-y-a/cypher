@@ -1,5 +1,5 @@
 import Navitem from "./navitem";
-import { Infromation, Information2 } from "../constant/navitems_text";
+import { Infromation, Information2 } from "./constant/navitems_text";
 import { brand } from "./brandname";
 const info = Infromation;
 const info2 = Information2;
