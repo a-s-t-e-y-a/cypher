@@ -1,12 +1,9 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const loginRouter = require('./routes/login/login.route');
-const PORT = process.env.PORT || 3000;
-app.use(express.json());
-app.listen(PORT,(req,res) => {
-    console.log('listening on port: '+ PORT);
+const app = require("./app");
+const http = require("http");
+
+const server = http.createServer(app);
+const PORT = process.envPORT || 8000;
+
+server.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`);
 });
-console.log(path.join(__dirname, '..','public'))
-app.use(express.static(path.join(__dirname,'..','public')))
-app.use(loginRouter)
