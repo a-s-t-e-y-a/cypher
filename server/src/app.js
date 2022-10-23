@@ -22,7 +22,6 @@ const signupRouter  = require('./routes/signup/signup.route');
 app.use(express.json());
 console.log(path.join(__dirname, '..','public'))
 app.use(express.static(path.join(__dirname,'..','public')))
-
 app.use(loginRouter)
 app.use(signupRouter)
 module.exports = app;
