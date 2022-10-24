@@ -37,6 +37,7 @@ async function getValidate(req, res) {
                           console.log(result);
                           res.status(400).json({
                             Message: "New user created successfully",
+                            result: result
                           });
                         })
                         .catch((err) => {
