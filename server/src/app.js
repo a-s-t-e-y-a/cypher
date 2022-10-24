@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/admin", {
+mongoose.connect("mongodb://localhost:27017/cypher", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -16,9 +16,11 @@ db.once("open", function () {
 
 const loginRouter = require("./routes/login/login.route");
 const signupRouter = require("./routes/signup/signup.route");
+const productRouter = require("./routes/products_upload/product.route");
 app.use(express.json());
 console.log(path.join(__dirname, "..", "public"));
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(loginRouter);
 app.use(signupRouter);
+app.use(productRouter)
 module.exports = app;
