@@ -31,15 +31,13 @@ export default function Login(){
 		result = await result.json();
 
 		if (
-			JSON.stringify(result.username) === '["This field may not be blank."]' ||
-			JSON.stringify(result.password) === '["This field may not be blank."]'
+			result.message ==="Error enter all the required fields"
 		) {
 			alert('Username and password field cannot be empty');
 		} else if (
-			JSON.stringify(result.non_field_errors) ===
-			'["Unable to log in with provided credentials."]'
+			result.message==="User is not found kindly signup"
 		) {
-			alert('Enter valid credentials');
+			alert('User cant found enter valid credentials');
 		} else if (result.token) {
 			console.log('congrats');
 			localStorage.setItem('token', JSON.stringify(result.token));
@@ -70,7 +68,7 @@ export default function Login(){
                 ))}
 
         
-        <FormAction handle={login} text="Login"/>
+        <FormAction handleSubmit={login} text="Login"/>
        
          </div>
       </form>

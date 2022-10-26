@@ -14,12 +14,12 @@ export default function Signup() {
   const handleChange = (f) => {
     setsignupState({ ...signupState, [f.target.id]: f.target.value });
   };
-
+  
   async function signup(e) {
     e.preventDefault();
-
+    console.log(signupState)
     console.log(JSON.stringify(signupState));
-    let result = await fetch("http://127.0.0.1:8000/sign", {
+    let result = await fetch("http://localhost:8000/sign", {
       method: "POST",
       body: JSON.stringify(signupState),
       headers: {
@@ -28,17 +28,22 @@ export default function Signup() {
       },
     });
     result = await result.json();
-    if (
-      JSON.stringify(result.username) === '["This field may not be blank."]' ||
-      JSON.stringify(result.password) === '["This field may not be blank."]'
-    ) {
-      alert("username or password field can't be empty");
+    console.log(result.error);
+    if (result.error==="Enter all details") {
+      alert("fields cant be empty");
     } else if (
-      JSON.stringify(result.email) === '["Enter a valid email address."]'
+      result.error === 'Email already exist kindly re-enter details'
     ) {
       ///verifying data
-      alert("Enter a valid email address.");
-    } else if (result.token) {
+      alert("Email already exist");
+    }else if (
+      result.error === "Username already exist kindly re-enter details"
+    ) {
+      ///verifying data
+      alert("Username  already exist");
+    } 
+    else if (result.Message) {
+      alert(result.Message)
       history("/");
     }
   
@@ -61,7 +66,7 @@ export default function Signup() {
             placeholder={field.placeholder}
           />
         ))}
-        <FormAction text="Sign up" handle={Signup} />
+        <FormAction text="Sign up" handleSubmit={signup} />
       </div>
     </form>
   );

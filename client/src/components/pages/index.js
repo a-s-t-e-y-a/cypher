@@ -5,14 +5,13 @@ import Boys_final from "../boys_display_index_page/boys_item_final";
 import Highlight from "../highlight/highlight_final";
 function Index() {
   return (
-  <>
-  <NavbarBase />
-  <HeaderBase/>
-  <Girls_final/>
-  <Highlight/>
-  <Boys_final />
-  </>
-  )
-
-  }
+    <>
+      <NavbarBase />
+      <HeaderBase />
+      <Girls_final />
+      <Highlight />
+      <Boys_final />
+    </>
+  );
+}
 export default Index;
