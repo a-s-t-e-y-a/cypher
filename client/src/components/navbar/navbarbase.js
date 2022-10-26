@@ -1,10 +1,20 @@
 import Navitem from "./navitem";
 import { Infromation, Information2 } from "./constant/navitems_text";
 import { brand } from "./brandname";
+import { useNavigate } from "react-router-dom";
 const info = Infromation;
 const info2 = Information2;
+
 export default function NavbarBase() {
   const logged = localStorage.getItem("token");
+  const history = useNavigate();
+  function logout (e){
+    console.log("logged")
+    e.preventDefault();
+    localStorage.removeItem("token");
+    history('/')
+  }
+
   return (
     <>
       <div className="flex justify-between text-sm px-8 py-4 items-center">
@@ -17,7 +27,7 @@ export default function NavbarBase() {
         <div className="flex justify-center gap-12">
           {!logged
             ? info2.map((info_data) => {
-                <Navitem text={info_data.name} />;
+               return <Navitem text={info_data.name} />;
               })
             : info2.map((info_data) => {
                 console.log(info_data.name == "Cart");
@@ -26,7 +36,7 @@ export default function NavbarBase() {
                 } else {
                   if (info_data.name == "Login") {
                     const text = "Logout";
-                    return <Navitem text={text} />;
+                    return <Navitem handle={logout} text={text} />;
                   }
                 }
               })}
