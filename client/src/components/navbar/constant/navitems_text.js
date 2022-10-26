@@ -17,14 +17,14 @@ const Information2= [
         name: "About",
       },
       {
-        name: "Search",
+        name: "Login",
       },
       {
-        name: "Saved",
+        name: "Signup",
       },
     
       {
-        name: "Card",
+        name: "Cart",
       },
 ]
 export { Infromation ,Information2};
