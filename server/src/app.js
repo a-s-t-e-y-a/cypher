@@ -3,7 +3,12 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser')
-
+const cors = require('cors');
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 app.use(bodyParser.json())
 
 mongoose.connect("mongodb://localhost:27017/cypher", {
