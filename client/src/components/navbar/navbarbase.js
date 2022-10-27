@@ -8,11 +8,11 @@ const info2 = Information2;
 export default function NavbarBase() {
   const logged = localStorage.getItem("token");
   const history = useNavigate();
-  function logout (e){
-    console.log("logged")
+  function logout(e) {
+    console.log("logged");
     e.preventDefault();
     localStorage.removeItem("token");
-    history('/')
+    history("/");
   }
 
   return (
@@ -27,7 +27,7 @@ export default function NavbarBase() {
         <div className="flex justify-center gap-12">
           {!logged
             ? info2.map((info_data) => {
-               return <Navitem text={info_data.name} />;
+                return <Navitem text={info_data.name} />;
               })
             : info2.map((info_data) => {
                 console.log(info_data.name == "Cart");
