@@ -1,7 +1,11 @@
-export default function Navitem({ text }) {
+export default function Navitem({ text , handle}) {
   return (
     <>
-      <h1 className="hover:opacity-50">{text}</h1>
+      <a href={text.toLowerCase()}>
+        <button onClick={handle} type="submit" className="hover:opacity-50">
+          {text}
+        </button>
+      </a>
     </>
   );
 }
