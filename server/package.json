@@ -15,8 +15,6 @@
     "cors": "^2.8.5",
     "deep-email-validator": "^0.1.21",
     "express": "^4.18.2",
-    "gridfs-stream": "^1.1.1",
-    "hbs": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
