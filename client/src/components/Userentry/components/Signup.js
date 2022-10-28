@@ -19,7 +19,7 @@ export default function Signup() {
     e.preventDefault();
     console.log(signupState)
     console.log(JSON.stringify(signupState));
-    let result = await fetch("http://localhost:8000/signup", {
+    let result = await fetch("http://localhost:8000/api/signup", {
       method: "POST",
       body: JSON.stringify(signupState),
       headers: {

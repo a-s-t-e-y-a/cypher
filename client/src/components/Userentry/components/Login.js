@@ -20,7 +20,7 @@ export default function Login(){
     const login = async (e) => {
 		e.preventDefault();
 		console.log(JSON.stringify(loginState));
-		let result = await fetch('http://127.0.0.1:8000/login', {
+		let result = await fetch('http://127.0.0.1:8000/api/login', {
 			method: 'POST',
 			body: JSON.stringify(loginState),
 			headers: {

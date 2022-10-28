@@ -12,7 +12,7 @@ export default function NavbarBase() {
     console.log("logged");
     e.preventDefault();
     localStorage.removeItem("token");
-    history("/");
+    history("/serve");
   }
 
   return (
