@@ -19,6 +19,10 @@ const image = new mongoose.Schema({
     related_product_id:{
         type: String,
         required: true
+    },
+    image_type:{
+      type: String,
+      required: true
     }
 })
 const Image = mongoose.model('Image',image)

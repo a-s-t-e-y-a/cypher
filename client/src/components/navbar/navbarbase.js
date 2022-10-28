@@ -30,7 +30,7 @@ export default function NavbarBase() {
                 return <Navitem text={info_data.name} />;
               })
             : info2.map((info_data) => {
-                console.log(info_data.name == "Cart");
+                
                 if (info_data.name == "Cart" || info_data.name == "About") {
                   return <Navitem text={info_data.name} />;
                 } else {

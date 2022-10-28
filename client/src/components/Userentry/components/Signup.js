@@ -44,7 +44,7 @@ export default function Signup() {
     } 
     else if (result.Message) {
       alert(result.Message)
-      history("/");
+      history("/serve/login");
     }
   
   }

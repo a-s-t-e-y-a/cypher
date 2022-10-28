@@ -41,7 +41,7 @@ export default function Login(){
 		} else if (result.token) {
 			console.log('congrats');
 			localStorage.setItem('token', JSON.stringify(result.token));
-			history('/');
+			history('/serve');
 		}
 	};
 
