@@ -6,7 +6,7 @@ const Posts = ({ posts, loading }) => {
   }
 
   return (
-    <ul className='list-group mb-4'>
+    <ul className='list-group mb-24 '>
       {posts.map(post => (
         <li key={post.id} className='list-group-item'>
           {post.title}
