@@ -9,7 +9,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/serve" element={<Index />} />
-          <Route path="/serve/for%20him" element={<Menstyle/>} />
           <Route path="/serve/for%20him/" element={<Menstyle/>} />
           <Route path="/serve/signup" element={<SignupPage />} />
           <Route path="/serve/login" element={<LoginPage />} />
