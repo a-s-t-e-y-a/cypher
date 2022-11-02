@@ -1,61 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from '../pagination/Pagination';
 import axios from 'axios';
-import Archi from './Archi';
+import Posts from './Archi';
 
 
 const Base = () => {
-  const [image, setimage] = useState([]);
-  const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagePerPage] = useState(8);
+  const [postsPerPage] = useState(10);
 
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const rep =await axios.get("http://localhost:8000/api/products");
-      setPost(rep.data.result);
-      const res = await axios.get('http://localhost:8000/api/image');
-      setimage(res.data.data);
+      const res = await axios.get("http://localhost:8000/api/aggregate/girls");
+      console.log(res.data.msg)
+      setPosts(res.data.msg);
       setLoading(false);
     };
 
     fetchPosts();
   }, []);
-
+  console.log(posts.length)
   // Get current posts
-  const indexOfLastImage = currentPage * imagePerPage;
-  const indexOfFirstImage = indexOfLastImage - imagePerPage;
-  const currentImage = image.slice(indexOfFirstImage, indexOfLastImage);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <>
-       {post.map((data) =>
-        image.map((info) =>
-          data._id == info.related_product_id &&
-          info.image_type == "cover" &&
-          data.category == "boys" ? (
-            <div className='container mt-5'>
-                   <Archi image={currentImage} 
-                          loading={loading}
-                          extension={info.extension}
-                          content={info.buff_data}
-                          tit={data.title}
-                          pri={data.price} />
-            </div>
-          ) : (
-            console.log(false)
-          ))
-      )}
-                      <Pagination
-                          imagePerPage={imagePerPage}
-                          totalimage={image.length}
-                          paginate={paginate}/>
-    </>
+     <div className=' mt-5'>
+      <h1 className="text-6xl font-bold flex justify-center mt-16">BOY'S COLLECTION</h1>
+      <Posts posts={currentPosts} 
+             loading={loading} 
+            />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
+    </div>
   );
 };
 
