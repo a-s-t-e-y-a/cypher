@@ -1,41 +1,35 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Girls_template from "./girls_template";
+
 export default function Girls_item_base() {
   const [post, setPost] = useState([]);
   const [image, setimage] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/products").then((response) => {
-      console.log(response);
-      setPost(response.data.result);
-    });
-    axios.get("http://localhost:8000/api/image").then((response) => {
-      console.log(response);
-      setimage(response.data.data);
+    console.log("123");
+    axios.get("http://localhost:8000/api/aggregate").then((response) => {
+      // console.log(response.data.msg.result[0].category)
+      // if(response.data.msg.result[0].category==="Female"){
+      setPost(response.data.msg);
+      // }
     });
   }, []);
-  console.log(post);
+  console.log(post.length);
   return (
     <>
-      {post.map((data) =>
-        image.map((info) =>
-          data._id == info.related_product_id &&
-          info.image_type == "cover" &&
-          data.category == "girls" ? (
-            <div>
-              <Girls_template
-                extension={info.extension}
-                content={info.buff_data}
-                tit={data.title}
-                pri={data.price}
-              />
-            </div>
-          ) : (
-            console.log(false)
-          )
-        )
-      )}
+      {post.map((data) => {
+        //  {console.log(data.result[0].title) }
+
+        return (
+          <Girls_template
+            extension={data.result[0].extension}
+            content={data.result[0].buff_data}
+            pri={data.price}
+            tit={data.title}
+          />
+        );
+      })}
     </>
   );
 }
