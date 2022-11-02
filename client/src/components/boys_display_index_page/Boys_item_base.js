@@ -6,7 +6,7 @@ export default function Boys_item_base() {
   const [image, setimage] = useState([]);
   let b = 0;
   useEffect(() => {
-    axios.get("http://localhost:8000/api/aggregate/boys").then((response) => {
+    axios.get("http://localhost:8000/api/aggregate/Male").then((response) => {
       // console.log(response);
       setPost(response.data.msg);
     });
