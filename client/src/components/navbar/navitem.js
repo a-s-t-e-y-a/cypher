@@ -1,7 +1,7 @@
 export default function Navitem({ text , handle}) {
   return (
     <>
-      <a href={text.toLowerCase()}>
+      <a href={"/serve/"+text.toLowerCase()}>
         <button onClick={handle} type="submit" className="hover:opacity-50">
           {text}
         </button>

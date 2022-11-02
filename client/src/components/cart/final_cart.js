@@ -7,7 +7,7 @@ export default function Final_cart() {
       <div className="container shadow-lg mt-12 p-12">
         <div className="flex justify-between">
           <div className="w-3/4">
-            <Header title="MY SHOP" tag_line="Thanks for shopping with us" />
+            <Header title="MY SHOP" tag_line="Go back to home" />
             <Product 
                 title ="Product title goes here"
                 sold_by="Country name goes here"

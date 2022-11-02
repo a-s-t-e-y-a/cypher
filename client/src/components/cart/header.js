@@ -11,6 +11,9 @@ export default function Header({
             {/* <h1 className="font-italic underline">
                 {tag_line}
             </h1> */}
+            <a href="/serve">
+                {tag_line}
+            </a>
       </div>
     </>
   );
