@@ -8,7 +8,7 @@ export default function Girls_item_base() {
 
   useEffect(() => {
     console.log("123");
-    axios.get("http://localhost:8000/api/aggregate/girls").then((response) => {
+    axios.get("http://localhost:8000/api/aggregate/Female").then((response) => {
       // console.log(response.data.msg.result[0].category)
       // if(response.data.msg.result[0].category==="Female"){
       setPost(response.data.msg);
