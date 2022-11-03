@@ -1,6 +1,6 @@
 const Infromation = [
   {
-    name: "For him",
+    name: "him",
   },
   {
     name: "For her",
@@ -23,8 +23,5 @@ const Information2= [
         name: "Signup",
       },
     
-      {
-        name: "Cart",
-      },
 ]
 export { Infromation ,Information2};

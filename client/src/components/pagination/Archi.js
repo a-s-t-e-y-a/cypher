@@ -1,42 +1,50 @@
 import React, { useState, useEffect } from "react";
+import addOneToCart from "./Cartcontext";
 
 const Posts = ({ posts, loading, cart }) => {
-  const [product, setproduct] = useState([]);
+  const [product, setproduct] = useState(() => {
+    return JSON.parse(localStorage.getItem("product")) || [];
+  });
   useEffect(() => {
+    const res = localStorage.getItem("product");
+
     localStorage.setItem("product", JSON.stringify(product));
   }, [product]);
-
+  const navigate = useNavigate();
   if (loading) {
     return <h2>Loading...</h2>;
   }
   function addItem(post) {
     let newcart = [...product];
-    let item = newcart.find((item)=>post.productid == item.productid)
-    console.log(item  )
-    if(item){
+    let item = newcart.find((item) => post.productid == item.productid);
+    console.log(item);
+    if (item) {
       item.quantity++;
-    }
-    else{
+    } else {
       item = {
         ...post,
         quantity: 1,
-      }
-      console.log(newcart)
+      };
+      console.log(newcart);
       newcart.push(item);
     }
-    
+
     setproduct(newcart);
   }
+
+  // function nav() {
+  //   navigate("/her", { state: post });
+  // }
   return (
     <div className="grid grid-cols-4 my-32 gap-16 pl-12">
       {posts.map((post) => (
         <>
           <div className="pt-12">
-            <a href="for%20him/for%20him/"><img
+            <img
               style={{ height: 400 }}
               className=" shadow-lg"
               src={`data:${post.result[0].extension};base64,${post.result[0].buff_data}`}
-            /></a>
+            />
             <div className="flex justify-between items-center mt-4">
               <h2 className="text-2xl">{post.title}</h2>
               <button
@@ -50,7 +58,7 @@ const Posts = ({ posts, loading, cart }) => {
                 </span>
               </button>
             </div>
-          </div>
+          </Link>
         </>
       ))}
       {/* {console.log(array)} */}
@@ -59,3 +67,11 @@ const Posts = ({ posts, loading, cart }) => {
 };
 
 export default Posts;
+{
+  /* <button
+                sm="6"
+                onClick={() => {
+                  addItem(post);
+                }}
+              ></button> */
+}

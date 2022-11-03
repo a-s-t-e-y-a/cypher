@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
@@ -12,9 +13,9 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <ul className="flex justify-center py-32 gap-4">
         {pageNumbers.map(number => (
           <li key={number} className='page-item'>
-            <a onClick={() => paginate(number)} href='for%20him#' className="page-link text-lg bg-sky-400 text-white rounded-lg hover:bg-sky-700">
+            <Link onClick={() => paginate(number)} to={'/serve/him'} className="page-link text-sm bg-purple-400 text-white rounded-lg hover:bg-purple-700">
               {number}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

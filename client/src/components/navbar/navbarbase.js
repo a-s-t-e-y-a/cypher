@@ -1,7 +1,8 @@
 import Navitem from "./navitem";
 import { Infromation, Information2 } from "./constant/navitems_text";
 import { brand } from "./brandname";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cart from "./cart";
 const info = Infromation;
 const info2 = Information2;
 
@@ -23,14 +24,20 @@ export default function NavbarBase() {
             <Navitem text={texts.name} />
           ))}
         </div>
-        <div className="text-2xl font-bold">{brand}</div>
+        <div className="text-2xl font-bold">
+          <Link to="/serve" className="text-none">{brand}</Link>
+        </div>
+
         <div className="flex justify-center gap-12">
           {!logged
             ? info2.map((info_data) => {
-                return <Navitem text={info_data.name} />;
+                return (
+                  <>
+                    <Navitem text={info_data.name} />
+                  </>
+                );
               })
             : info2.map((info_data) => {
-                
                 if (info_data.name == "Cart" || info_data.name == "About") {
                   return <Navitem text={info_data.name} />;
                 } else {
@@ -40,6 +47,7 @@ export default function NavbarBase() {
                   }
                 }
               })}
+          <Cart text="Cart" />
         </div>
       </div>
     </>
