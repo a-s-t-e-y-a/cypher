@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import addOneToCart from "./Cartcontext";
 
 const Posts = ({ posts, loading, cart }) => {
   const [product, setproduct] = useState([]);
@@ -33,11 +32,11 @@ const Posts = ({ posts, loading, cart }) => {
       {posts.map((post) => (
         <>
           <div className="pt-12">
-            <img
+            <a href="for%20him/for%20him/"><img
               style={{ height: 400 }}
               className=" shadow-lg"
               src={`data:${post.result[0].extension};base64,${post.result[0].buff_data}`}
-            />
+            /></a>
             <div className="flex justify-between items-center mt-4">
               <h2 className="text-2xl">{post.title}</h2>
               <button
