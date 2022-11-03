@@ -9,11 +9,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/serve" element={<Index />} />
-          <Route path="/serve/for%20him/" element={<Menstyle/>} />
-          <Route path="/serve/signup" element={<SignupPage />} />
-          <Route path="/serve/login" element={<LoginPage />} />
-          <Route path="/serve/cart" element={<Final_cart />} />
+          <Route path="/serve/:type" element={<Index />} />
+          <Route exact path="/serve/him/" element={<Menstyle/>} />
+          <Route exact path="/serve/signup" element={<SignupPage />} />
+          <Route exact path="/serve/login" element={<LoginPage />} />
+          <Route exact path="/serve/cart" element={<Final_cart />} />
         </Routes>
       </BrowserRouter>
     </>
