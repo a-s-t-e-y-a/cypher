@@ -8,12 +8,12 @@ const Base = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(4);
 
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:8000/api/aggregate/girls");
+      const res = await axios.get("http://localhost:8000/api/aggregate/Male");
       console.log(res.data.msg)
       setPosts(res.data.msg);
       setLoading(false);
