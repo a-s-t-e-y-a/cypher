@@ -5,6 +5,7 @@ import Index from "./components/pages/index";
 import Menstyle from "./components/pages/MenStyle";
 import Final_cart from "./components/cart/final_cart";
 import ProductD from "./components/pages/ProductD";
+import ITEMPAGE from "./components/ItemPage";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/serve/signup" element={<SignupPage />} />
           <Route exact path="/serve/login" element={<LoginPage />} />
           <Route exact path="/serve/cart" element={<Final_cart />} />
+          <Route exact path="/serve/display" element={<ITEMPAGE />} />
         </Routes>
       </BrowserRouter>
     </>
