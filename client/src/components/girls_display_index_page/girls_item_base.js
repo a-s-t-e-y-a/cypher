@@ -9,16 +9,20 @@ export default function Girls_item_base() {
   useEffect(() => {
     console.log("123");
     axios.get("http://localhost:8000/api/aggregate/Female").then((response) => {
-      // console.log(response.data.msg.result[0].category)
+      console.log(response.data.msg)
       // if(response.data.msg.result[0].category==="Female"){
       setPost(response.data.msg);
       // }
     });
   }, []);
-  console.log(post.length);
+  const rows = [];
+  for (let i = 0; i < 10; i++) {
+    rows.push(post[i]);
+  }
+  console.log(post);
   return (
     <>
-      {post.map((data) => {
+      {rows.map((data) => {
         //  {console.log(data.result[0].title) }
 
         return (
