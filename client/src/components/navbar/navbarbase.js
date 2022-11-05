@@ -25,7 +25,7 @@ export default function NavbarBase() {
           ))}
         </div>
         <div className="text-2xl font-bold">
-          <Link to="/serve" className="text-none">{brand}</Link>
+          <Link to="/serve" className="hover:no-underline hover:text-black">{brand}</Link>
         </div>
 
         <div className="flex justify-center gap-12">
