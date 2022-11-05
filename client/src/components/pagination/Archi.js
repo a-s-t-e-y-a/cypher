@@ -40,7 +40,7 @@ const Posts = ({ posts, loading, cart }) => {
       {posts.map((post) => (
         <>
           <Link
-            to="/serve/param"
+            to="/serve/display/param"
             state={{ data:post }} // your data array of objects
             className="hover:no-underline hover:text-black"
           >

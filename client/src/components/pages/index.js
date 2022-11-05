@@ -8,8 +8,7 @@ import { useLocation, useParams } from "react-router-dom";
 function Index() {
   // const { state } = this.props.location
   // const { state } = useParams();
-  const {data}  = useLocation().state;
-  console.log(data);
+
   // console.log(state);  
   return (
     <>
