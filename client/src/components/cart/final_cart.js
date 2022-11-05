@@ -7,12 +7,12 @@ export default function Final_cart() {
     return localStorage.getItem("product") || [];
   });
   const [t1, sett1] = useState(1);
- 
-let sum =0 ;
+
+  let sum = 0;
   JSON.parse(data).map(async (dat) => {
-    await (sum = sum +dat.price*dat.quantity)
+    await (sum = sum + dat.price * dat.quantity);
   });
-  
+
   // console.log(JSON.parse(data))
   const new_data = JSON.parse(data);
 
@@ -29,11 +29,13 @@ let sum =0 ;
                   sold_by={dat.country_origin}
                   price={dat.price}
                   quantity={dat.quantity}
+                  extension = {dat.result[0].extension}
+                  buff_data={dat.result[0].buff_data}
                 />
               );
             })}
           </div>
-          <Checkout_sidebar total={sum.toLocaleString('en-US')} />
+          <Checkout_sidebar total={sum.toLocaleString("en-US")} />
         </div>
       </div>
     </>
