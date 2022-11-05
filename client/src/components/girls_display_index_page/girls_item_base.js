@@ -15,14 +15,10 @@ export default function Girls_item_base() {
       // }
     });
   }, []);
-  const rows = [];
-  for (let i = 0; i < 10; i++) {
-    rows.push(post[i]);
-  }
-  console.log(post);
+ 
   return (
     <>
-      {rows.map((data) => {
+      {post.slice(0,10).map((data) => {
         //  {console.log(data.result[0].title) }
 
         return (

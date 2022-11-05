@@ -12,14 +12,10 @@ export default function Boys_item_base() {
     });
   }, []);
   // console.log(post);
-  let b = 0;
-  const rows = [];
-  for (let i = 0; i < 10; i++) {
-    rows.push(post[i]);
-  }
+
   return (
     <>
-      {rows.map((data) => (
+      {post.slice(0,10).map((data) => (
         <div>
           <Template
                   extension={data.result[0].extension}
