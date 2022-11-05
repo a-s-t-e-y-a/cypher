@@ -3,7 +3,7 @@ const Infromation = [
     name: "him",
   },
   {
-    name: "For her",
+    name: "her",
   },
   {
     name: "Objects",

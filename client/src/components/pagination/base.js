@@ -4,16 +4,17 @@ import axios from 'axios';
 import Posts from './Archi';
 
 
-const Base = () => {
+const Base = ({category}) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(20);
-
+  const url = JSON.stringify(category)
+console.log("http://localhost:8000/api/aggregate/"+category)
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("http://localhost:8000/api/aggregate/Male");
+      const res = await axios.get("http://localhost:8000/api/aggregate/"+category);
       console.log(res.data.msg)
       setPosts(res.data.msg);
       setLoading(false);
@@ -32,7 +33,7 @@ const Base = () => {
 
   return (
      <div className=' mt-5'>
-      <h1 className="text-6xl font-bold flex justify-center mt-16">BOY'S COLLECTION</h1>
+      <h1 className="text-6xl font-bold flex justify-center mt-16">{category}'S COLLECTION</h1>
       <Posts posts={currentPosts} 
              loading={loading} 
             />

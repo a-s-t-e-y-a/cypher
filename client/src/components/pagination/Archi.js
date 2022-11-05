@@ -1,36 +1,13 @@
-import React, { useState, useEffect } from "react";
+
 // import addOneToCart from "./Cartcontext";
 import { useNavigate,Link } from "react-router-dom";
 const Posts = ({ posts, loading, cart }) => {
-  const [product, setproduct] = useState(() => {
-    return JSON.parse(localStorage.getItem("product")) || [];
-  });
-  useEffect(() => {
-    const res = localStorage.getItem("product");
-
-    localStorage.setItem("product", JSON.stringify(product));
-  }, [product]);
+  
   const navigate = useNavigate();
   if (loading) {
     return <h2>Loading...</h2>;
   }
-  function addItem(post) {
-    let newcart = [...product];
-    let item = newcart.find((item) => post.productid == item.productid);
-    console.log(item);
-    if (item) {
-      item.quantity++;
-    } else {
-      item = {
-        ...post,
-        quantity: 1,
-      };
-      console.log(newcart);
-      newcart.push(item);
-    }
-
-    setproduct(newcart);
-  }
+  
 
   // function nav() {
   //   navigate("/her", { state: post });
