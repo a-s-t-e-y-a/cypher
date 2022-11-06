@@ -74,7 +74,7 @@ async function aggregateController(req, res) {
       },
     },
     {
-      $limit: 100,
+      $limit: 300,
     },
   ];
 

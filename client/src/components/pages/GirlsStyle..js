@@ -3,13 +3,13 @@
 import NavbarBase from "../navbar/navbarbase";
 import Base from "../pagination/base";
 
-function MenStyle() {
+function GirlStyle() {
   return (
     <>
     <NavbarBase/>
       <Base
-      category= "Male" />
+      category= "Female" />
     </>
   );
 }
-export default MenStyle;
+export default GirlStyle;

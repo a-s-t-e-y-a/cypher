@@ -4,7 +4,7 @@ import Template from "./template";
 export default function Boys_item_base() {
   const [post, setPost] = useState([]);
   const [image, setimage] = useState([]);
-  let b = 0;
+
   useEffect(() => {
     axios.get("http://localhost:8000/api/aggregate/Male").then((response) => {
       // console.log(response);
@@ -12,9 +12,10 @@ export default function Boys_item_base() {
     });
   }, []);
   // console.log(post);
+
   return (
     <>
-      {post.map((data) => (
+      {post.slice(0,10).map((data) => (
         <div>
           <Template
                   extension={data.result[0].extension}
