@@ -1,6 +1,7 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import NavbarBase from "../navbar/navbarbase";
+import GoToTop from "../gotop";
 function ITEMPAGE() {
   const [product, setproduct] = useState(() => {
     return JSON.parse(localStorage.getItem("product")) || [];
@@ -85,6 +86,7 @@ function ITEMPAGE() {
           <p className="px-32">{data.property_value}</p>
         </div>
       </div>
+      <GoToTop/>
     </>
   );
 }

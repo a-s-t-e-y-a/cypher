@@ -1,13 +1,20 @@
-
 // import addOneToCart from "./Cartcontext";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import Loader from "react-js-loader";
 const Posts = ({ posts, loading, cart }) => {
-  
   const navigate = useNavigate();
   if (loading) {
-    return <h2>Loading...</h2>;
+    return (
+      <div className={"item"}>
+      <Loader
+        type="box-rotate-x"
+        bgColor={"#BF40BF"}
+        color={"#FFFFFF"}
+        size={100}
+      />
+    </div>
+    );
   }
-  
 
   // function nav() {
   //   navigate("/her", { state: post });
@@ -18,7 +25,7 @@ const Posts = ({ posts, loading, cart }) => {
         <>
           <Link
             to="/serve/display/param"
-            state={{ data:post }} // your data array of objects
+            state={{ data: post }} // your data array of objects
             className="hover:no-underline hover:text-black"
           >
             <div className="pt-12 flex justify-center">
@@ -43,10 +50,12 @@ const Posts = ({ posts, loading, cart }) => {
       ))}
       {/* {console.log(array)} */}
     </div>
+    
   );
 };
 export default Posts;
-      {/* {console.log(array)} *login/}
+{
+  /* {console.log(array)} *login/}
     </div>
   );
 };

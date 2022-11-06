@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.a031e336.css",
-    "main.js": "/static/js/main.f6ec4ee7.js",
+    "main.css": "/static/css/main.818498e4.css",
+    "main.js": "/static/js/main.6c4a4572.js",
     "static/js/787.32144135.chunk.js": "/static/js/787.32144135.chunk.js",
     "static/media/Playfair_Display.zip": "/static/media/Playfair_Display.76b98b902413cabb64bb.zip",
     "index.html": "/index.html",
-    "main.a031e336.css.map": "/static/css/main.a031e336.css.map",
-    "main.f6ec4ee7.js.map": "/static/js/main.f6ec4ee7.js.map",
+    "main.818498e4.css.map": "/static/css/main.818498e4.css.map",
+    "main.6c4a4572.js.map": "/static/js/main.6c4a4572.js.map",
     "787.32144135.chunk.js.map": "/static/js/787.32144135.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a031e336.css",
-    "static/js/main.f6ec4ee7.js"
+    "static/css/main.818498e4.css",
+    "static/js/main.6c4a4572.js"
   ]
 }

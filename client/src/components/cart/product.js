@@ -1,4 +1,5 @@
 import Button from "./button";
+import { Link } from "react-router-dom";
 export default function Product({
   title,
   sold_by,
@@ -11,10 +12,12 @@ export default function Product({
     <>
       <div className="flex justify-start items-center mb-4 gap-4">
         <div>
+      
           <img
             src={`data:${extension};base64,${buff_data}`}
             className="h-32 w-32 rounded-lg mr-24 shadow-lg"
           ></img>
+          
         </div>
         <div>
           <h1 className="text-xl  mb-1 ">{title}</h1>
