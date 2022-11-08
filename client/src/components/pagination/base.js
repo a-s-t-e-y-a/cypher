@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pagination from '../pagination/Pagination';
 import axios from 'axios';
 import Posts from './Archi';
+import GoToTop from '../gotop';
 
 
 const Base = ({category}) => {
@@ -42,6 +43,7 @@ console.log("http://localhost:8000/api/aggregate/"+category)
         totalPosts={posts.length}
         paginate={paginate}
       />
+      <GoToTop/>
     </div>
   );
 };

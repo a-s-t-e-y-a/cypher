@@ -3,6 +3,7 @@ import { Infromation, Information2 } from "./constant/navitems_text";
 import { brand } from "./brandname";
 import { Link, useNavigate } from "react-router-dom";
 import Cart from "./cart";
+import Logout from "./logout";
 const info = Infromation;
 const info2 = Information2;
 
@@ -45,7 +46,7 @@ export default function NavbarBase() {
                 } else {
                   if (info_data.name == "Login") {
                     const text = "Logout";
-                    return <Navitem handle={logout} text={text} />;
+                    return <Logout handle={logout} text={text} />;
                   }
                 }
               })}

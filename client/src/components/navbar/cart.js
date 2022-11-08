@@ -4,8 +4,11 @@ export default function Cart({ text , handle}) {
     const [cart , setcart] = useState()
     useEffect((item)=>{
         let storage =localStorage.getItem('product')
-        let local = JSON.parse(storage)
-        setcart(local.length)
+        let local = JSON.parse(storage);
+        if(local){
+          setcart(local.length)
+        }
+        
     },[cart])
     return (
       <>
