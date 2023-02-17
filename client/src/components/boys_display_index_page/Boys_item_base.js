@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Template from "./template";
 export default function Boys_item_base() {
   const [post, setPost] = useState([]);
-  const [image, setimage] = useState([]);
+  
 
   useEffect(() => {
     axios.get("http://localhost:8000/api/aggregate/Male").then((response) => {

@@ -10,7 +10,7 @@ const Base = ({category}) => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(20);
-  const url = JSON.stringify(category)
+  
 console.log("http://localhost:8000/api/aggregate/"+category)
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,6 +22,7 @@ console.log("http://localhost:8000/api/aggregate/"+category)
     };
 
     fetchPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(posts.length)
   // Get current posts

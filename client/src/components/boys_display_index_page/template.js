@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 export default function Template({ extension,content, pri, tit }) {
   return (
     <>

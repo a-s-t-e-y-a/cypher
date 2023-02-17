@@ -1,4 +1,3 @@
-let dummy = [1000, 1500, 2000, 2500, 3000, 3500, 4000];
 let Girls=[];
 // fetch('http://localhost:8000/products')
 //   .then((response) => response.json())

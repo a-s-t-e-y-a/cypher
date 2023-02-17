@@ -1,14 +1,16 @@
-import Product from "./product";
+/* eslint-disable react/jsx-pascal-case */
+/* eslint-disable jsx-a11y/alt-text */
+
 import Header from "./header";
 import Checkout_sidebar from "./checkout_side_bar";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./button";
 export default function Final_cart() {
-  const [data, setdata] = useState(() => {
+  const [data] = useState(() => {
     return localStorage.getItem("product") || [];
   });
-  const [t1, sett1] = useState(1);
+
 
   let sum = 0;
   JSON.parse(data).map(async (dat) => {

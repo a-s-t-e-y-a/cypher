@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/alt-text */
 // import addOneToCart from "./Cartcontext";
-import { useNavigate, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import Loader from "react-js-loader";
 const Posts = ({ posts, loading, cart }) => {
-  const navigate = useNavigate();
+  
   if (loading) {
     return (
       <div className={"item"}>
@@ -54,18 +55,4 @@ const Posts = ({ posts, loading, cart }) => {
   );
 };
 export default Posts;
-{
-  /* {console.log(array)} *login/}
-    </div>
-  );
-};
 
-
-{
-  /* <button
-                sm="6"
-                onClick={() => {
-                  addItem(post);
-                }}
-              ></button> */
-}

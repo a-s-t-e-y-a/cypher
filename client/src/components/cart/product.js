@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Button from "./button";
-import { Link } from "react-router-dom";
+
 export default function Product({
   title,
   sold_by,

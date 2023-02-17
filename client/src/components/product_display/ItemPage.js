@@ -1,4 +1,6 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+/* eslint-disable eqeqeq */
+/* eslint-disable jsx-a11y/alt-text */
+import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import NavbarBase from "../navbar/navbarbase";
 import GoToTop from "../gotop";
@@ -7,7 +9,7 @@ function ITEMPAGE() {
     return JSON.parse(localStorage.getItem("product")) || [];
   });
   useEffect(() => {
-    const res = localStorage.getItem("product");
+    
 
     localStorage.setItem("product", JSON.stringify(product));
   }, [product]);

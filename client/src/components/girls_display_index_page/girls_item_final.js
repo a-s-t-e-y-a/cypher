@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import Girls_item_base from "./girls_item_base";
 export default function Girls_final() {
   return (

@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-pascal-case */
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Girls_template from "./girls_template";
 
 export default function Girls_item_base() {
   const [post, setPost] = useState([]);
-  const [image, setimage] = useState([]);
+  
 
   useEffect(() => {
     console.log("123");

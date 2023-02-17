@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import Navitem from "./navitem";
 import { Infromation, Information2 } from "./constant/navitems_text";
 import { brand } from "./brandname";
@@ -40,6 +41,7 @@ export default function NavbarBase() {
                   </>
                 );
               })
+            // eslint-disable-next-line array-callback-return
             : info2.map((info_data) => {
                 if (info_data.name == "Cart" || info_data.name == "About") {
                   return <Navitem text={info_data.name} />;
